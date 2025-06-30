@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="./static/font-awesome-4.7.0/css/font-awesome.min.css">
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
 </head>
@@ -10,7 +11,7 @@
     <!-- Here can be placed player controls: play and volume buttons -->
   </div>
   <button>
-    <p>Play</p>
+    <p><i class="fa fa-play" aria-hidden="true"></i></p>
   </button>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
@@ -19,6 +20,5 @@
   <script type="text/javascript">
     createPlayer({elementId: 'player'});
   </script>
-
 </body>
 </html>
