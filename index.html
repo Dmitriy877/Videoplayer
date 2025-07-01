@@ -15,21 +15,21 @@
       flex-direction: column;
     }
 
-    .vp-video-container-size {
+    .vp-video-player-display {
       flex-grow: 1;
     }
 
-    .vp-buttons {
+    .vp-video-player-buttons {
       background-color: black;
     }
 
-    .vp-button-style {
+    .vp-video-player-button {
       border-style: none;
       cursor: pointer;
       background-color: transparent;
     }
 
-    .vp-button-color {
+    .vp-video-player-button-text {
       color:white
     }
 
@@ -38,15 +38,20 @@
 </head>
 <body>
   <div id="player" class="vp-video-player">
-    <div class="js-video-container vp-video-container-size"></div>
+    <div class="js-video-container vp-video-player-display"></div>
     <!-- Here can be placed player controls: play and volume buttons -->
-    <div class="vp-buttons">
+    <div class="vp-video-player-buttons">
       <div>
-        <button class="js-play-button vp-button-style">
-          <p><i class="fa fa-play vp-button-color" aria-hidden="true"></i></p>
+        <button class="js-play-button vp-video-player-button">
+          <p><i class="fa fa-play vp-video-player-button-text" aria-hidden="true"></i></p>
         </button>
-        <button class="js-pause-button vp-button-style">
-          <p><i class="fa fa-pause vp-button-color" aria-hidden="true"></i></p>
+        <button class="js-pause-button vp-video-player-button">
+          <p><i class="fa fa-pause vp-video-player-button-text" aria-hidden="true"></i></p>
+        <button class="js-volume-button vp-video-player-button">
+          <i class="fa fa-volume-off vp-video-player-button-text" aria-hidden="true"></i>
+        </button>
+        <button class="js-mute-button vp-video-player-button" hidden>
+          <i class="fa fa-volume-up vp-video-player-button-text" aria-hidden="true"></i>
         </button>
       </div>
     </div>
