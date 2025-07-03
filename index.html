@@ -2,13 +2,16 @@
 <html>
 <head>
   <link rel="stylesheet" href="./static/font-awesome-4.7.0/css/font-awesome.min.css">
-  <title>Пример подключения плеера</title>
+  <title>Видеоплеер</title>
   <link rel="icon" type="image/png" href="./static/favicon.png" sizes="196x196">
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
   <style type="text/css">
 
-    .vp-video-player {
+    .player {
       width: 800px;
       height: 600px;
       box-shadow: 0 0 10px 10px black;
@@ -16,16 +19,24 @@
       flex-direction: column;
     }
 
-    .vp-video-player-display {
+    .screen {
       flex-grow: 1;
     }
 
-    .vp-video-player-buttons {
+    .bottom-controls {
       background-color: black;
       display: flex;
     }
 
-    .vp-video-player-button {
+    .left-buttons {
+      display: flex;
+    }
+    
+    .play-button {
+      display: flex
+    }
+
+    .player-button {
       width: 34px;
       border-style: none;
       cursor: pointer;
@@ -34,37 +45,102 @@
       margin-right: 3px;
     }
 
-    .vp-video-player-button-text {
+    .player-button-text {
       color:white;
       font-size: 20px;
     }
 
-    .vp-video-player-buttons-gap {
+    .volume-button {
+      display: flex
+    }
+
+    .viewing-panel {
+      display: flex;
       flex-grow: 1;
     }
 
+    .viewing-time {
+      display: flex
+    }
+
+    .viewing-duration {
+      display: flex
+    }
+
+    .viewing-text {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+      color:white;
+    }
+
+    .time-text {
+      margin-left: -1px;
+      margin-right: 3px;
+      margin-top: 16px;
+    }
+
+    .duration-text {
+      margin-left: 24px;
+      margin-right: 2px;
+      margin-top: 15px;
+      margin-bottom: 0px
+    }
+
+    .viewing-progressbar {
+      flex-grow: 1;
+    }
+
+    .right-buttons {
+      display: flex
+    }
+
+    .fullscreen-button {
+      display: flex
+    }
+
   </style>
+
 </head>
 <body>
-  <div id="player" class="vp-video-player">
-    <div class="js-video-container vp-video-player-display"></div>
-    <!-- Here can be placed player controls: play and volume buttons -->
-    <div class="vp-video-player-buttons">
-        <button class="js-play-button vp-video-player-button">
-          <p><i class="fa fa-play vp-video-player-button-text" aria-hidden="true"></i></p>
-        </button>
-        <button class="js-pause-button vp-video-player-button">
-          <p><i class="fa fa-pause vp-video-player-button-text" aria-hidden="true"></i></p>
-        <button class="js-volume-button vp-video-player-button">
-          <i class="fa fa-volume-off vp-video-player-button-text" aria-hidden="true"></i>
-        </button>
-        <button class="js-mute-button vp-video-player-button" hidden>
-          <i class="fa fa-volume-up vp-video-player-button-text" aria-hidden="true"></i>
-        </button>
-        <div class="vp-video-player-buttons-gap"></div>
-        <button class="js-fullscreen-button vp-video-player-button">
-          <i class="fa fa-expand vp-video-player-button-text" aria-hidden="true"></i>
-        </button>
+  <div id="player" class="player">
+    <div class="js-video-container screen"></div>
+    <div class="bottom-controls">
+      <div class="left-buttons">
+        <div class="play-button">
+          <button class="js-play-button player-button">
+          <p><i class="fa fa-play player-button-text" aria-hidden="true"></i></p>
+          </button>
+        </div>
+        <div class="pause-button">
+          <button class="js-pause-button player-button">
+          <p><i class="fa fa-pause player-button-text" aria-hidden="true"></i></p>
+        </div>
+        <div class="volume-button">
+          <button class="js-mute-button player-button" hidden>
+          <i class="fa fa-volume-up player-button-text" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="viewing-panel">
+        <div class="viewing-time">
+          <span class="js-current-time viewing-text time-text"></span>
+        </div>
+        <div class="viewing-progressbar">
+        </div>
+        <div class="viewing-duration">
+          <span class="js-duration viewing-text duration-text"></span>
+        </div>
+      </div>
+      <div class="right-buttons">
+        <div class="fullscreen-button">
+          <button class="js-fullscreen-button player-button">
+          <i class="fa fa-expand player-button-text" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
