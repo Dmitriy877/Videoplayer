@@ -36,6 +36,10 @@
       display: flex
     }
 
+    .volume-button {
+      display: flex
+    }
+
     .player-button {
       width: 34px;
       border-style: none;
@@ -50,21 +54,19 @@
       font-size: 20px;
     }
 
-    .volume-button {
-      display: flex
-    }
-
     .viewing-panel {
       display: flex;
       flex-grow: 1;
     }
 
     .viewing-time {
-      display: flex
+      display: flex;
+      align-items: center
     }
 
     .viewing-duration {
-      display: flex
+      display: flex;
+      align-items: center
     }
 
     .viewing-text {
@@ -79,18 +81,55 @@
     .time-text {
       margin-left: -1px;
       margin-right: 3px;
-      margin-top: 16px;
+      margin-top: 2px;
     }
 
     .duration-text {
       margin-left: 24px;
       margin-right: 2px;
-      margin-top: 15px;
-      margin-bottom: 0px
+      margin-top: 3px;
     }
 
     .viewing-progressbar {
+      display: flex;
       flex-grow: 1;
+      background-color: black;
+      align-items: center
+    }
+
+    .viewing-progressbar-block {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .progressbar-slider {
+      height: 6px;
+      background-color: #f8104d;
+      border-radius: 5px;
+      margin-left: 7px;
+      margin-right: 0;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    .progresssbar-dot {
+      align-items: center;
+      display: flex;
+      flex-grow: 2;
+      margin-left: -13px;
+    }
+
+    .progresssbar-dot-text {
+      height: 8px;
+      width: 8px;
+      background-color: #f8104d;
+      border-radius: 50%;
+      display: inline-block;
+      border-style: solid;
+      border-width: 3px;
+      border-color: white;
+      box-shadow: 0px 0px 13px white;
     }
 
     .right-buttons {
@@ -100,6 +139,7 @@
     .fullscreen-button {
       display: flex
     }
+
 
   </style>
 
@@ -129,6 +169,12 @@
           <span class="js-current-time viewing-text time-text"></span>
         </div>
         <div class="viewing-progressbar">
+          <div class="js-progress viewing-progressbar-block">
+            <div class="js-progress-slider progressbar-slider"></div>
+            <div class="progresssbar-dot">
+              <span class="progresssbar-dot-text"></span>
+            </div>
+          </div>
         </div>
         <div class="viewing-duration">
           <span class="js-duration viewing-text duration-text"></span>
