@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="./static/normalize/normalize.css">
   <link rel="stylesheet" href="./static/font-awesome-4.7.0/css/font-awesome.min.css">
   <title>Видеоплеер</title>
   <link rel="icon" type="image/png" href="./static/favicon.png" sizes="196x196">
@@ -26,22 +27,27 @@
     .bottom-controls {
       background-color: black;
       display: flex;
-      align-items: center
+      align-items: center;
     }
 
     .left-buttons {
       display: flex;
-      align-items: center
+      align-items: center;
     }
     
     .play-button {
-      display: flex
-      align-items: center
+      display: flex;
+      align-items: center;
     }
 
     .volume-button {
-      display: flex
-      align-items: center
+      display: flex;
+      align-items: center;
+    }
+
+    .mute-button {
+      display: flex;
+      align-items: center;
     }
 
     .player-button {
@@ -61,7 +67,7 @@
     .viewing-panel {
       display: flex;
       flex-grow: 1;
-      align-items: center
+      align-items: center;
     }
 
     .viewing-time {
@@ -72,7 +78,7 @@
 
     .viewing-duration {
       display: flex;
-      align-items: center
+      align-items: center;
     }
 
     .viewing-text {
@@ -107,7 +113,7 @@
     .viewing-progressbar-block {
       display: flex;
       flex-grow: 1;
-      align-items: center
+      align-items: center;
     }
 
     .progressbar-slider {
@@ -165,12 +171,12 @@
 
     .right-buttons {
       display: flex;
-      align-items: center
+      align-items: center;
     }
 
     .fullscreen-button {
       display: flex;
-      align-items: center
+      align-items: center;
     }
 
   </style>
@@ -191,8 +197,13 @@
           <p><i class="fa fa-pause player-button-text" aria-hidden="true"></i></p>
         </div>
         <div class="volume-button">
+          <button class="js-volume-button player-button" hidden>
+           <i class="fa fa-volume-off player-button-text" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="mute-button">
           <button class="js-mute-button player-button" hidden>
-          <i class="fa fa-volume-up player-button-text" aria-hidden="true"></i>
+           <i class="fa fa-volume-up player-button-text" aria-hidden="true"></i>
           </button>
         </div>
       </div>
